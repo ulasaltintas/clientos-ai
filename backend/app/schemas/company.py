@@ -5,6 +5,9 @@ from pydantic import BaseModel, ConfigDict, Field
 
 
 class CompanyCreate(BaseModel): #validates incoming company data
+    
+    model_config = ConfigDict(extra="forbid")
+    
     name: str = Field(min_length=1, max_length=255)
     industry: str | None = Field(default=None, max_length=100)
     website: str | None = Field(default=None, max_length=255)
@@ -12,6 +15,8 @@ class CompanyCreate(BaseModel): #validates incoming company data
 
 
 class CompanyUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    
     name: str = Field(default=None, min_length=1, max_length=255)
     industry: str | None = Field(default=None, max_length=100)
     website: str | None = Field(default=None, max_length=255)

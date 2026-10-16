@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI
 
-from app.routers import companies
+from app.routers import companies, contacts
 
 app = FastAPI(title="ClientOS AI API")
 
@@ -12,3 +12,4 @@ def health_check():
 
 
 app.include_router(companies.router)
+app.include_router(contacts.router)
