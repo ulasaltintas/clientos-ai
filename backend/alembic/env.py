@@ -10,6 +10,7 @@ from alembic import context
 from app.base import Base
 from app.models.contact import Contact
 from app.models.company import Company
+from app.models.deal import Deal
 from app.database import DATABASE_URL
 
 
